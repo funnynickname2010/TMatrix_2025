@@ -13,9 +13,18 @@
     <ClInclude Include="..\include\tmatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tvector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\samples\sample_matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tvector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
