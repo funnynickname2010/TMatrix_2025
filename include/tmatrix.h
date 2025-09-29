@@ -22,48 +22,32 @@ template<typename T>
 class TDynamicMatrix : private TDynamicVector<TDynamicVector<T>>
 {
   using TDynamicVector<TDynamicVector<T>>::pMem;
-  using TDynamicVector<TDynamicVector<T>>::sz;
+  using TDynamicVector<TDynamicVector<T>>::size;
 public:
-  TDynamicMatrix(size_t s = 1) : TDynamicVector<TDynamicVector<T>>(s)
-  {
-    for (size_t i = 0; i < sz; i++)
-      pMem[i] = TDynamicVector<T>(sz);
-  }
 
+  // конструктор по умолчанию
+  TDynamicMatrix(size_t s = 1) : TDynamicVector<TDynamicVector<T>>(s);
+
+  // индексация без контроля
   using TDynamicVector<TDynamicVector<T>>::operator[];
 
   // сравнение
-  bool operator==(const TDynamicMatrix& m) const noexcept
-  {
-  }
+  bool operator==(const TDynamicMatrix& m) const noexcept;
+  bool operator!=(const TDynamicMatrix& m) const noexcept;
 
   // матрично-скалярные операции
-  TDynamicMatrix operator*(const T& val)
-  {
-  }
+  TDynamicMatrix operator*(const T& val);
 
   // матрично-векторные операции
-  TDynamicVector<T> operator*(const TDynamicVector<T>& v)
-  {
-  }
+  TDynamicVector<T> operator*(const TDynamicVector<T>& v);
 
   // матрично-матричные операции
-  TDynamicMatrix operator+(const TDynamicMatrix& m)
-  {
-  }
-  TDynamicMatrix operator-(const TDynamicMatrix& m)
-  {
-  }
-  TDynamicMatrix operator*(const TDynamicMatrix& m)
-  {
-  }
+  TDynamicMatrix operator+(const TDynamicMatrix& m);
+  TDynamicMatrix operator-(const TDynamicMatrix& m);
+  TDynamicMatrix operator*(const TDynamicMatrix& m);
 
   // ввод/вывод
-  friend istream& operator>>(istream& istr, TDynamicMatrix& v)
-  {
-  }
-  friend ostream& operator<<(ostream& ostr, const TDynamicMatrix& v)
-  {
-  }
+  friend istream& operator>>(istream& istr, TDynamicMatrix& v);
+  friend ostream& operator<<(ostream& ostr, const TDynamicMatrix& v);
 };
 #endif

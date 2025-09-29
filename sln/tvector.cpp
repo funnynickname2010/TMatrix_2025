@@ -175,15 +175,17 @@ bool TDynamicVector<T>::operator==(const TDynamicVector<T>& v) const noexcept
   if (size != v.size) 
   {
     result = false;
-    break;
   }
-  for (size_t i = 0; i < size; i++) 
+  else
   {
-    if (pMem[i] != v.pMem[i]) 
-    {
-      result = false;
-      break;
-    }
+      for (size_t i = 0; i < size; i++)
+      {
+          if (pMem[i] != v.pMem[i])
+          {
+              result = false;
+              break;
+          }
+      }
   }
   return result;
 }
